@@ -1,0 +1,12 @@
+﻿@model List<rep.Models.DbModels.Teacher>
+<main>
+    <h2 style="margin-left:20px">Наши преподаватели</h2>
+    @foreach (var teach in Model)
+    {
+        <div class="teacher-card">
+            <p>@teach.TeacherName</p>
+            <p>Стаж работы: @teach.TeacherExperience</p>
+            <p>О преподавателе: @teach.TeacherProfile</p>
+        </div>
+    }
+</main>

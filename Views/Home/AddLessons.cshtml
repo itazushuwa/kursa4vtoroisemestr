@@ -1,0 +1,45 @@
+﻿@model List<rep.Models.DbModels.Lesson>
+
+<main>
+    <h2 style="margin-left:20px">Расписание уроков</h2>
+    @foreach (var less in Model)
+    {
+        <div class="lesson-card">
+            <p>@less.LessonName</p>
+            <p>Длительность: @less.LessonDuration минут.</p>
+            <p>День недели:@less.LessonDayOfWeek</p>
+            <p>Дата начала:@less.LessonStartDate</p>
+        </div>
+    }
+@using (Html.BeginForm("AddLessons", "Home", FormMethod.Post))
+{
+    <h1>Добавить Материал</h1>
+    <div>
+        <label for="text">Название материала:</label>
+        @Html.TextBox("name", null, new { @style = "height: 10px", @class = "form-control", required = "required" })
+    </div>
+
+        <div>
+            <label for="text">День недели:</label>
+            @Html.DropDownList("dayOfWeek", new SelectList(new[] {
+        new SelectListItem { Text = "Понедельник", Value = "Понедельник"},
+        new SelectListItem { Text = "Вторник", Value = "Вторник"},
+        new SelectListItem { Text = "Среда", Value = "Среда"},
+        new SelectListItem { Text = "Четверг", Value = "Четверг"},
+        new SelectListItem { Text = "Пятница", Value = "Пятница"},
+        new SelectListItem { Text = "Суббота", Value = "Суббота"},
+        new SelectListItem { Text = "Воскресенье", Value = "Воскресенье"},
+        }, "Value", "Text"), "Выберите день недели", new { @class = "form-control", required = "required" })
+        </div>
+    <div>
+        <label for="number">Длительность(в минутах):</label>
+            @Html.TextBox("duration", null, new { @style = "height: 10px", @class = "form-control", required = "required" })
+    </div>
+        <div>
+            <label for="text">Дата начала:</label>
+            @Html.TextBox("date", null, new { @type = "date", @class = "form-control", required = "required" })
+        </div>
+
+    <button class="btn btn-primary" type="submit">Добавить</button>
+}
+</main>

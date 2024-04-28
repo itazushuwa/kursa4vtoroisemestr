@@ -1,0 +1,28 @@
+﻿﻿@using rep.Models;
+@model rep.Models.DbModels.User
+
+<main>
+    @using (Html.BeginForm("Registration", "Authentication", FormMethod.Post))
+    {
+        <h1 class="loginregH1">Регистрация</h1>
+        <div>
+            <label>Логин</label>
+            @Html.TextBoxFor(model => model.UserName)
+        </div>
+        <div>
+            <label>Email</label>
+            @Html.TextBoxFor(model => model.UserEmail)
+        </div>
+        <div>
+            <label>Пароль</label>
+            @Html.TextBoxFor(model => model.UserPassword)
+        </div>
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+        <button class="buttonReg" type="submit">Регистрация</button>
+    }
+</main>

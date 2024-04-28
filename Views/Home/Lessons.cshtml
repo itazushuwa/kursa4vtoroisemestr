@@ -1,0 +1,14 @@
+﻿@model List<rep.Models.DbModels.Lesson>
+
+<main>
+    <h2 style="margin-left:20px">Расписание уроков</h2>
+    @foreach(var less in Model)
+    {
+        <div class="lesson-card">
+        <p>@less.LessonName</p>
+        <p>Длительность: @less.LessonDuration минут.</p>
+        <p>День недели:@less.LessonDayOfWeek</p>
+        <p>Дата начала:@less.LessonStartDate</p>
+        </div>
+    }
+</main>

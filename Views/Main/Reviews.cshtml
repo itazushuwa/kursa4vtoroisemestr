@@ -1,0 +1,15 @@
+﻿@model List<rep.Models.DbModels.Review>
+
+<header>
+    <h1>Отзывы Студентов</h1>
+</header>
+<main>
+    @foreach (var rew in Model)
+    {
+        <div class="material-card">
+            <p>Студент: @rew.ReviewStudent</p>
+            <p>Комментарий @rew.ReviewTitle</p>
+            <p>Оценка: @rew.ReviewRating</p>
+        </div>
+    }
+</main>

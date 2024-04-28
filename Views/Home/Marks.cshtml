@@ -1,0 +1,17 @@
+﻿@model rep.Models.DbModels.MarksStudents;
+
+<main>
+    @using (Html.BeginForm("AddMark", "Home", FormMethod.Post))
+    {
+        <h1>Выставить оценку</h1>
+        <div>
+            <label for="student">Студент:</label>
+            @Html.DropDownList("student", (SelectList)ViewBag.StudentsList, "Выберите студента", new { @class = "form-control", required = "required" })
+        </div>
+        <div>
+            <label for="text">Оценка:</label>
+            @Html.TextBox("value", null, new { @style = "height: 10px", @class = "form-control", required = "required" })
+        </div>
+        <button class="btn btn-primary" type="submit">Выставить оценку</button>
+    }
+</main>

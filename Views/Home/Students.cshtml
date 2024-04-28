@@ -1,0 +1,10 @@
+﻿@model List<rep.Models.DbModels.Student>
+<main>
+    <h2 style="margin-left:20px">Студенты</h2>
+    @foreach (var stud in Model)
+    {
+        <div class="teacher-card">
+           <p>@stud.StudentName</p>
+        </div>
+    }
+</main>

@@ -1,0 +1,19 @@
+﻿@model List<rep.Models.DbModels.MarksStudents>
+<main>
+    <h2 style="text-align:center">Оценки</h2>
+    @if (Model.Count == 0)
+    {
+        <h2 style="text-align:center">Оценок нет</h2>
+    }
+    else
+    {
+        @foreach (var mark in Model)
+        {
+            <div class="teacher-card">
+
+                <p>Преподаватель:@ViewBag.Teachers[mark.ID_Teacher]</p>
+                <p>Оценка:@mark.Mark</p>           
+            </div>
+        }
+    }
+</main>

@@ -1,0 +1,11 @@
+﻿@model List<rep.Models.DbModels.Material>
+<main>
+    <h2 style="margin-left:20px">Учебные материалы</h2>
+    @foreach(var mater in Model)
+    {
+        <div class="material-card">
+            <p>@mater.MaterialTitle</p>
+            <p>@mater.MaterialType</p>
+        </div>
+    }
+</main>
