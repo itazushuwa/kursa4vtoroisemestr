@@ -187,5 +187,15 @@ namespace rep.Controllers
             var stud = await _context.Student.ToListAsync();
             return View(stud);
         }
+        public async Task<IActionResult> MaterialDescription(int id)
+        {
+            CheckRole();
+            var material = await _context.Material.FindAsync(id);
+            if (material == null)
+            {
+                return NotFound();
+            }
+            return View(material);
+        }
     }
 }

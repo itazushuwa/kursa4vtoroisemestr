@@ -11,10 +11,17 @@
     <section id="programs">
         <div class="container">
             <h2>Программы</h2>
-            @foreach (var programm in Model)
-            {
-            <li>@programm.MaterialTitle</li>
-            }
+            <ul>
+                @foreach (var programm in Model)
+                {
+                    <li>
+                        <a href="@Url.Action("MaterialDescription", "Home", new { id = programm.MaterialID })">
+                            <p>@programm.MaterialTitle</p>
+                        </a>
+                    </li>
+                }
+            </ul>
         </div>
     </section>
 </main>
+
