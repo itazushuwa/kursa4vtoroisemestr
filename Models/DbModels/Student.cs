@@ -2,6 +2,7 @@
 
 namespace rep.Models.DbModels
 {
+    //asdasd
     public class Student
     {
         [Key] public int StudentID { get; set; }

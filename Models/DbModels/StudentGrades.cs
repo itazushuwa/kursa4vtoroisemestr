@@ -2,6 +2,7 @@
 
 namespace rep.Models.DbModels
 {
+    //asdasd
     [Keyless]
     public class StudentGrades
     {

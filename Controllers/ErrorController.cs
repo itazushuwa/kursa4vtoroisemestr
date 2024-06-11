@@ -2,6 +2,7 @@
 
 namespace rep.Controllers
 {
+    //asdasd
     public class ErrorController : Controller
     {
         public IActionResult AunthError()
